@@ -3,4 +3,6 @@
 select 
 customer_id
 from customers
-where year = 2021  and revenue > 0;
+where year = 2021
+group by customer_id
+having max(revenue) > 0;
