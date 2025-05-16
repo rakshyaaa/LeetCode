@@ -8,7 +8,7 @@ class Solution(object):
         l = 0
         length = 0
 
-        char_hashmap = defaultdict(int)
+        char_hashmap = Counter()
 
         for r in range(len(s)):
             char_hashmap[s[r]] += 1
