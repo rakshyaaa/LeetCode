@@ -10,9 +10,10 @@ class Solution(object):
         for n in nums:
             if currSum < 0:
                 currSum = 0
-  
+           
             currSum += n
 
-            maxSub = max(maxSub, currSum)
+            if currSum > maxSub:
+                maxSub =  currSum
         
         return maxSub
