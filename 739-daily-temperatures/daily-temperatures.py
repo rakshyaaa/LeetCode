@@ -24,19 +24,22 @@ class Solution(object):
         Monotonic Stack: Monotonic decreasing order, the stack is in decreasing order, not strictly 
 
         """
-        output = [0] * len(temperatures) 
+        output = [0] * len(temperatures)
 
-        tempStack = []  # add two values to this stack temp and its index as [temp, index]
+        tempStack = []   #conists of  each temp and its index
 
-        for index, temp in enumerate(temperatures):  #enumerate to get the index and values at the same time
-
+        #[[73,0], ]
+        for index, temp in enumerate(temperatures):
+            
             while tempStack and temp > tempStack[-1][0]:
                 tempStackT, tempStackInd = tempStack.pop()
                 output[tempStackInd] = index - tempStackInd
-        
+            
             tempStack.append([temp, index])
             
         return output
+
+
 
 
 
