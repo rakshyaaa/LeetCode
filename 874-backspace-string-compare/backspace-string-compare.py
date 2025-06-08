@@ -18,14 +18,7 @@ class Solution(object):
 
             return stack
 
-        
-
-        sStack, tStack = [],[]
-
-        sStack = stringCheck(s)
-        tStack = stringCheck(t)
-
-        return True if ''.join(sStack) == ''.join(tStack) else False 
+        return stringCheck(s) == stringCheck(t)
         
         
 
