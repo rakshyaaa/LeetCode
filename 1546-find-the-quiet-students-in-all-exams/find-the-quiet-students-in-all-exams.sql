@@ -21,6 +21,7 @@ left join cte c
 on c.exam_id = e.exam_id
 where score in (high_score, low_score) or score is null
 )
-select student_id, student_name from student where student_id not in (select student_id from cte2)
+select student_id, student_name from student s
+where not exists (select student_id from cte2 where cte2.student_id = s.student_id)
 
 
